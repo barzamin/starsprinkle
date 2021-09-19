@@ -1,0 +1,25 @@
+[package]
+name = "starsprinkle"
+version = "0.1.0"
+authors = ["Erin Moon <erin@hecke.rs>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+gtfs-rt = "0.2"
+prost = "0.8"
+anyhow = "1.0"
+serde_json = "1.0"
+chrono = "0.4"
+
+[dependencies.sqlx]
+version = "0.5"
+features = [
+    "runtime-tokio-rustls",
+    "postgres",
+    "chrono",
+    "json",
+]
